@@ -1,0 +1,14 @@
+default: "member" //Default grade
+
+grade:
+  member:
+    colorGrade: "§8" //the color of grade
+    colorChat: "§7" //the color in chat
+    permission: [] //for add permission
+
+  admin:
+    colorGrade: "§6"
+    colorChat: "§f"
+    permission: [
+    "grade.use"
+    ]
