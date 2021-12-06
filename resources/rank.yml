@@ -1,3 +1,6 @@
+#https://www.digminecraft.com/lists/color_list_pc.php for all color in minecraft
+
+
 default: "member" #The default rank in server
 
 rank:
