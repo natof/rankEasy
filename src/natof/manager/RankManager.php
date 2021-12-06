@@ -6,7 +6,8 @@ use natof\RankEasy;
 use pocketmine\player\Player;
 use pocketmine\utils\Config;
 
-class RankManager implements RankManagerInterface{
+class RankManager implements RankManagerInterface
+{
 
     /**
      * @var Player
@@ -20,13 +21,13 @@ class RankManager implements RankManagerInterface{
 
     public function __construct(Player $player)
     {
-        $this->config = new Config(RankEasy::getInstance()->getDataFolder(). "save/" . $player->getName() . ".json", Config::JSON);
+        $this->config = new Config(RankEasy::getInstance()->getDataFolder() . "save/" . $player->getName() . ".json", Config::JSON);
         $this->player = $player;
     }
 
     public function createProfile(): bool
     {
-        if(file_exists(RankEasy::getInstance()->getDataFolder(). "save/" . $this->player->getName() . "json")) return false;
+        if (file_exists(RankEasy::getInstance()->getDataFolder() . "save/" . $this->player->getName() . "json")) return false;
         $ConfigManager = new ConfigManager();
         $this->config->set("rank", $ConfigManager->getDefaultRank());
         $this->config->save();

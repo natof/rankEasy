@@ -5,8 +5,6 @@
 
 <h2 align="center">Simple plugin to create ranks 🎈</h2>
 
-
-
 <h3>Config:</h3>
 
 ``` yaml

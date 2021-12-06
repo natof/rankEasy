@@ -5,7 +5,8 @@ namespace natof\manager;
 use natof\RankEasy;
 use pocketmine\utils\Config;
 
-class ConfigManager implements ConfigInterfaceManager{
+class ConfigManager implements ConfigInterfaceManager
+{
 
     /**
      * @var Config

@@ -2,21 +2,24 @@
 
 namespace natof\event;
 
-use natof\RankEasy;
 use natof\manager\ConfigManager;
 use natof\manager\RankManager;
+use natof\RankEasy;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\event\player\PlayerJoinEvent;
 
-class PlayerListener implements Listener {
+class PlayerListener implements Listener
+{
 
-    public function onJoin(PlayerJoinEvent $event){
+    public function onJoin(PlayerJoinEvent $event)
+    {
         $rankManager = new RankManager($event->getPlayer());
         $rankManager->createProfile();
     }
 
-    public function onChat(PlayerChatEvent $event){
+    public function onChat(PlayerChatEvent $event)
+    {
         $event->cancel();
         $player = $event->getPlayer();
         $configManager = new ConfigManager();
