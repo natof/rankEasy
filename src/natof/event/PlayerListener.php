@@ -2,9 +2,9 @@
 
 namespace natof\event;
 
-use natof\GradeEasy;
+use natof\RankEasy;
 use natof\manager\ConfigManager;
-use natof\manager\GradeManager;
+use natof\manager\RankManager;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\event\player\PlayerJoinEvent;
@@ -12,18 +12,18 @@ use pocketmine\event\player\PlayerJoinEvent;
 class PlayerListener implements Listener {
 
     public function onJoin(PlayerJoinEvent $event){
-        $gradeManager = new GradeManager($event->getPlayer());
-        $gradeManager->createProfile();
+        $rankManager = new RankManager($event->getPlayer());
+        $rankManager->createProfile();
     }
 
     public function onChat(PlayerChatEvent $event){
         $event->cancel();
         $player = $event->getPlayer();
         $configManager = new ConfigManager();
-        $gradeManager = new GradeManager($player);
-        $grade = $gradeManager->getGrade();
-        $colorGrade = $configManager->getColorGrade($grade);
-        $colorMessage = $configManager->getColorMessage($grade);
-        GradeEasy::getInstance()->getServer()->broadcastMessage("${colorGrade}[${grade}]§r" . $player->getName() . "${colorGrade} §l»§r ${colorMessage}" . $event->getMessage());
+        $rankManager = new RankManager($player);
+        $rank = $rankManager->getRank();
+        $colorRank = $configManager->getColorRank($rank);
+        $colorMessage = $configManager->getColorMessage($rank);
+        RankEasy::getInstance()->getServer()->broadcastMessage("${colorRank}[${rank}]§r" . $player->getName() . "${colorRank} §l»§r ${colorMessage}" . $event->getMessage());
     }
 }

@@ -2,7 +2,7 @@
 
 namespace natof\manager;
 
-use natof\GradeEasy;
+use natof\RankEasy;
 use pocketmine\utils\Config;
 
 class ConfigManager implements ConfigInterfaceManager{
@@ -14,48 +14,48 @@ class ConfigManager implements ConfigInterfaceManager{
 
     public function __construct()
     {
-        $this->config = new Config(GradeEasy::getInstance()->getDataFolder() . "grade.yml", Config::YAML);
+        $this->config = new Config(RankEasy::getInstance()->getDataFolder() . "rank.yml", Config::YAML);
     }
 
     /**
      * @return string
      */
-    public function getDefaultGrade(): string
+    public function getDefaultRank(): string
     {
         return $this->config->get("default");
     }
 
     /**
-     * @param string $grade
+     * @param string $rank
      * @return string
      */
-    public function getColorGrade(string $grade): string
+    public function getColorRank(string $rank): string
     {
-        return $this->config->getNested("grade." . $grade . ".colorGrade");
+        return $this->config->getNested("rank." . $rank . ".colorRank");
     }
 
     /**
-     * @param string $grade
+     * @param string $rank
      * @return string
      */
-    public function getColorMessage(string $grade): string
+    public function getColorMessage(string $rank): string
     {
-        return $this->config->getNested("grade." . $grade . ".colorChat");
+        return $this->config->getNested("rank." . $rank . ".colorChat");
     }
 
-    public function existGrade(string $grade): bool
+    public function existRank(string $rank): bool
     {
-        if (is_null($this->config->getNested("grade." . $grade))) return false;
+        if (is_null($this->config->getNested("rank." . $rank))) return false;
         return true;
     }
 
-    public function getPermission(string $grade): array
+    public function getPermission(string $rank): array
     {
-        return $this->config->getNested("grade." . $grade . ".permission");
+        return $this->config->getNested("rank." . $rank . ".permission");
     }
 
-    public function getGrades(): array
+    public function getRanks(): array
     {
-        return $this->config->getNested("grade");
+        return $this->config->getNested("rank");
     }
 }

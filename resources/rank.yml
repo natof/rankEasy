@@ -1,0 +1,14 @@
+default: "member" #The default rank in server
+
+rank:
+  member: #the name of the rank
+    colorRank: "§8" #Color of rank
+    colorChat: "§7" #Color in chat
+    permission: [] 
+
+  admin: 
+    colorRank: "§6"
+    colorChat: "§f"
+    permission: [
+    "rank.use" #add Permission 
+    ]

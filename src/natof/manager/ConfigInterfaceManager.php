@@ -6,39 +6,39 @@ interface ConfigInterfaceManager{
 
     /**
      * @return string
-     * Get Default Grade
+     * Get Default rank
      */
-    public function getDefaultGrade() : string;
+    public function getDefaultRank() : string;
 
     /**
-     * @param string $grade
+     * @param string $rank
      * @return string
-     * Get color of grade
+     * Get color of rank
      */
-    public function getColorGrade(string $grade) : string;
+    public function getColorRank(string $rank) : string;
 
     /**
-     * @param string $grade
+     * @param string $rank
      * @return string
      * Get color of message
      */
-    public function getColorMessage(string $grade) : string;
+    public function getColorMessage(string $rank) : string;
 
     /**
-     * @param string $grade
+     * @param string $rank
      * @return bool
-     * Check if the grade exist in the config
+     * Check if the rank exist in the config
      */
-    public function existGrade(string $grade) : bool;
+    public function existRank(string $rank) : bool;
 
     /**
-     * @param string $grade
+     * @param string $rank
      * @return array
      */
-    public function getPermission(string $grade) : array;
+    public function getPermission(string $rank) : array;
 
     /**
      * @return array
      */
-    public function getGrades() : array;
+    public function getRanks() : array;
 }
