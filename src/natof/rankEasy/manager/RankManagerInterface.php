@@ -1,6 +1,6 @@
 <?php
 
-namespace natof\manager;
+namespace natof\rankEasy\manager;
 
 interface RankManagerInterface
 {

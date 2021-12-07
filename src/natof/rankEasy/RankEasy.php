@@ -1,9 +1,9 @@
 <?php
 
-namespace natof;
+namespace natof\rankEasy;
 
-use natof\command\SetRank;
-use natof\event\PlayerListener;
+use natof\rankEasy\command\SetRank;
+use natof\rankEasy\event\PlayerListener;
 use pocketmine\permission\Permission;
 use pocketmine\permission\PermissionManager;
 use pocketmine\plugin\PluginBase;
@@ -19,8 +19,8 @@ class RankEasy extends PluginBase
         @mkdir(self::getInstance()->getDataFolder() . "save");
         $this->saveResource("rank.yml");
         $this->getServer()->getPluginManager()->registerEvents(new PlayerListener(), $this);
-        Server::getInstance()->getCommandMap()->register("setrank", new SetRank());
-        PermissionManager::getInstance()->addPermission(new Permission("rank.use"));
+        Server::getInstance()->getCommandMap()->register("rankEasy", new SetRank());
+        PermissionManager::getInstance()->addPermission(new Permission("rankEasy.rank.use"));
         parent::onEnable();
     }
 

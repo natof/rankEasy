@@ -1,8 +1,8 @@
 <?php
 
-namespace natof\manager;
+namespace natof\rankEasy\manager;
 
-use natof\RankEasy;
+use natof\rankEasy\RankEasy;
 use pocketmine\player\Player;
 use pocketmine\utils\Config;
 
