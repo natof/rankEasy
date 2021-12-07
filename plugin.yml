@@ -1,5 +1,5 @@
 name: RankEasy
-main: natof\RankEasy
+main: natof\rankEasy\RankEasy
 api: 4.0.0
 version: 1.0.0
 author: Natof
