@@ -13,5 +13,5 @@ rank:
     colorRank: "§6"
     colorChat: "§f"
     permission: [
-        "rank.use" #add Permission
+        "rankEasy.rank.use" #add Permission
     ]

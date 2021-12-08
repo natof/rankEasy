@@ -1,16 +1,18 @@
 <?php
 
-namespace natof\command;
+namespace natof\rankEasy\command;
 
-use natof\manager\ConfigManager;
-use natof\manager\RankManager;
-use natof\RankEasy;
+use natof\rankEasy\manager\ConfigManager;
+use natof\rankEasy\manager\RankManager;
+use natof\rankEasy\RankEasy;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
+use pocketmine\plugin\Plugin;
+use pocketmine\plugin\PluginOwned;
 use pocketmine\Server;
 
-class SetRank extends Command
+class SetRank extends Command implements PluginOwned
 {
 
     public function __construct()
@@ -50,5 +52,10 @@ class SetRank extends Command
                     $sender->sendMessage("[RankEasy] The player is not specified.");
                 }
         }
+    }
+
+    public function getOwningPlugin(): Plugin
+    {
+        return RankEasy::getInstance();
     }
 }
