@@ -27,7 +27,7 @@ class RankManager implements RankManagerInterface
 
     public function createProfile(): bool
     {
-        if (file_exists(RankEasy::getInstance()->getDataFolder() . "save/" . $this->player->getName() . "json")) return false;
+        if (file_exists(RankEasy::getInstance()->getDataFolder() . "save/" . $this->player->getName() . ".json")) return false;
         $ConfigManager = new ConfigManager();
         $this->config->set("rank", $ConfigManager->getDefaultRank());
         $this->config->save();
